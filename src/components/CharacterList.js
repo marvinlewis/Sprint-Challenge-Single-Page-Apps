@@ -5,8 +5,7 @@ import "./characterlist.css";
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
-    const [ characters, setCharacters ] = useState([]);
-    const [ input, setInput ] = useState(" ");
+    const [ input, setInput ] = useState("");
     const [ searchResults, setSearchResults ] = useState([]);
 
     const handleInput = (e) => {
@@ -15,18 +14,18 @@ export default function CharacterList() {
   useEffect(() => {
     axios.get(`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/`)
     .then(res => {
-      setCharacters(res.data.results);
-      //console.log(res.data.results)
-      const result = characters.filter(item => 
-        item.name.toLowerCase().includes(input.toLocaleLowerCase())
-      )
+        const result = res.data.results.filter(item => 
+        item.name.toLowerCase().includes(input.toLowerCase())
+        );
+      
+        setSearchResults(result);
     
-      setSearchResults(result);
     })
     .catch(res => console.log("error"))
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
   }, [input]);
+  
 
 
 
@@ -50,4 +49,5 @@ export default function CharacterList() {
       <CharacterCard key={item.id} character={item} />)
     })}
     </div>
-  )}
+  )
+  }
