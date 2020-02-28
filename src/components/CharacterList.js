@@ -15,7 +15,7 @@ export default function CharacterList() {
     axios.get(`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/`)
     .then(res => {
         const result = res.data.results.filter(item => 
-        item.name.toLowerCase().includes(input.toLowerCase())
+        item.name.toLowerCase().startsWith(input.toLowerCase())
         );
       
         setSearchResults(result);
