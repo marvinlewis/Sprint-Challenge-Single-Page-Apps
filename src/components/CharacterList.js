@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import CharacterCard from "./CharacterCard"
-
+import CharacterCard from "./CharacterCard";
+import "./characterlist.css";
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
     const [ characters, setCharacters ] = useState([]);
-    const [ input, setInput ] = useState("");
+    const [ input, setInput ] = useState(" ");
     const [ searchResults, setSearchResults ] = useState([]);
 
     const handleInput = (e) => {
@@ -31,11 +31,11 @@ export default function CharacterList() {
 
 
   return (
-    <div>
+    <div >
       <section className="search-form">
-     <div>
+     <div className="cont1">
        <form>
-         <label>
+         <label> Search Characters: {" "}
            <input 
            id="search" 
            name="search"
