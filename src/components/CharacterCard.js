@@ -3,7 +3,7 @@ import { Card, CardBody, Button, CardTitle, CardText, CardImg } from 'reactstrap
 import "./card.css";
 
 export default function CharacterCard({character}) {
-  console.log(character);
+
     return (
         <Card className="cont">
           <div  className="pic">

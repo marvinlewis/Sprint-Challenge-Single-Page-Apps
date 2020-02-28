@@ -1,8 +1,9 @@
 import React from "react";
-import Header from "./components/Header.js";
 import CharacterList from "./components/CharacterList.js";
-import { Route } from "react-router-dom";
 import WelcomePage from "./components/WelcomePage";
+import SearchForm from "./components/SearchForm";
+import Header from "./components/Header";
+import { Route } from "react-router-dom";
 
 
 export default function App() {
