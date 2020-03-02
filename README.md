@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Client-side routing allows the links and routes in an app to work within the app. When a user navigates to another page it does not make a server request. 
 
 ## Project Set Up
 
